@@ -76,7 +76,7 @@ namespace Solution.Domain
                 return mainProponent.MonthlyIncome > 4 * InstallmentValue;
 
             if (mainProponent.Age >= 24 && mainProponent.Age < 50)
-                return mainProponent.MonthlyIncome > 4 * InstallmentValue;
+                return mainProponent.MonthlyIncome > 3 * InstallmentValue;
 
             if (mainProponent.Age >= 50)
                 return mainProponent.MonthlyIncome > 2 * InstallmentValue;

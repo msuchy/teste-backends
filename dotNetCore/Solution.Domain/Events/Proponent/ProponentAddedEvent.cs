@@ -5,7 +5,7 @@ namespace Solution.Domain.Events.Proponent
 {
     public class ProponentAddedEvent : EventBase
     {
-        public ProponentAddedEvent(IProposalRepository repo, string[] messageData) : base(repo, messageData)
+        public ProponentAddedEvent(string[] messageData) : base(messageData)
         {
             ProponentId = Guid.Parse(messageData[5]);
             Name = messageData[6].Trim();
@@ -20,13 +20,5 @@ namespace Solution.Domain.Events.Proponent
         public int Age { get; set; }
         public decimal MonthlyIncome { get; set; }
         public bool IsMain { get; set; }
-
-        public override void Run()
-        {
-            var currentProposal = _repo.GetById(this.ProposalId);
-            var warranty = new Solution.Domain.Proponent(this);
-            currentProposal.Proponents.Add(warranty);
-            _repo.Update(currentProposal);
-        }
     }
 }
