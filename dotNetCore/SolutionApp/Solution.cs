@@ -49,7 +49,7 @@ namespace SolutionApp
       foreach (var message in messages)
       {
         EventBase ev = Parse(message);
-        if (!_consumer.IsValid(ev))
+        if (!_consumer.IsValidEvent(ev))
           continue;
 
         _consumer.Consume(ev);

@@ -10,7 +10,7 @@ namespace SolutionApp
         static void Main(string[] args)
         {
             IProposalRepository repository = new ProposalRepository();
-            string basePath = $"../../test";
+            string basePath = $"../../../../../test";
 
             for (var index = 0; index < 13; index++)
             {

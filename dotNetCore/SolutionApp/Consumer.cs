@@ -15,7 +15,6 @@ namespace SolutionApp
     public Consumer(IProposalRepository repository)
     {
       _repo = repository;
-
     }
 
     internal void Consume(EventBase ev)
@@ -23,7 +22,7 @@ namespace SolutionApp
       typeof(Consumer).GetMethod("Consume", new Type[] { ev.GetType() }).Invoke(this, new object[] { ev });
     }
 
-    public bool IsValid(EventBase ev)
+    public bool IsValidEvent(EventBase ev)
     {
       var currentProposal = _repo.GetById(ev.ProposalId);
 
@@ -33,7 +32,7 @@ namespace SolutionApp
       if (currentProposal == null)
         return false;
 
-      if (currentProposal.Events.Any(e => e.Id == ev.Id))
+      if (currentProposal.Events.Any(e => e.Id == ev.Id && e.Action == ev.Action))
         return false;
 
       if (currentProposal.Events.Any(e => e.Timestamp > ev.Timestamp))
