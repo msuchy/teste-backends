@@ -20,6 +20,8 @@ namespace Solution.Domain.Events.Warranty
       {
          var currentProposal = _repo.GetById(this.ProposalId);
          var warranty = currentProposal.Warranties.Single(w => w.Id == this.WarrantyId);
+            warranty.Value = this.Value;
+            warranty.Province = this.Province;
          _repo.Update(currentProposal);
       }
    }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Solution.Domain.Events.Proponent
 {
@@ -20,6 +21,13 @@ namespace Solution.Domain.Events.Proponent
 
       public override void Run()
       {
+            var currentProposal = _repo.GetById(this.ProposalId);
+            var proponent = currentProposal.Proponents.Single(w => w.Id == this.ProponentId);
+            proponent.Name = this.Name;
+            proponent.Age = this.Age;
+            proponent.MonthlyIncome = this.MonthlyIncome;
+            proponent.IsMain = this.IsMain;
+            _repo.Update(currentProposal);
       }
    }
 }

@@ -21,6 +21,10 @@ namespace Solution.Domain.Events.Proponent
 
       public override void Run()
       {
+            var currentProposal = _repo.GetById(this.ProposalId);
+            var warranty = new Solution.Domain.Proponent(this);
+            currentProposal.Proponents.Add(warranty);
+            _repo.Update(currentProposal);
       }
    }
 }
