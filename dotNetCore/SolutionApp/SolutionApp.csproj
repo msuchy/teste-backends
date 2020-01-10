@@ -1,6 +1,116 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <None Remove="Assets\input000.txt" />
+    <None Remove="Assets\input001.txt" />
+    <None Remove="Assets\input002.txt" />
+    <None Remove="Assets\input003.txt" />
+    <None Remove="Assets\input004.txt" />
+    <None Remove="Assets\input005.txt" />
+    <None Remove="Assets\input006.txt" />
+    <None Remove="Assets\input007.txt" />
+    <None Remove="Assets\input008.txt" />
+    <None Remove="Assets\input009.txt" />
+    <None Remove="Assets\input010.txt" />
+    <None Remove="Assets\input011.txt" />
+    <None Remove="Assets\input012.txt" />
+    <None Remove="Assets\output000.txt" />
+    <None Remove="Assets\output001.txt" />
+    <None Remove="Assets\output002.txt" />
+    <None Remove="Assets\output003.txt" />
+    <None Remove="Assets\output004.txt" />
+    <None Remove="Assets\output005.txt" />
+    <None Remove="Assets\output006.txt" />
+    <None Remove="Assets\output007.txt" />
+    <None Remove="Assets\output008.txt" />
+    <None Remove="Assets\output009.txt" />
+    <None Remove="Assets\output010.txt" />
+    <None Remove="Assets\output011.txt" />
+    <None Remove="Assets\output012.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\input000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input001.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input002.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input003.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input004.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input005.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input006.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input007.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input008.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input009.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input010.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input011.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\input012.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output000.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output001.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output002.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output003.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output004.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output005.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output006.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output007.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output008.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output009.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output010.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output011.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\output012.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Solution.Domain\Solution.Domain.csproj" />
     <ProjectReference Include="..\Solution.Repository\Solution.Repository.csproj" />
   </ItemGroup>

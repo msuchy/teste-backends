@@ -10,13 +10,12 @@ namespace SolutionApp
         static void Main(string[] args)
         {
             IProposalRepository repository = new ProposalRepository();
-            string basePath = $"../../../../../test";
 
             for (var index = 0; index < 13; index++)
             {
                 var strIndex = index.ToString().PadLeft(3, '0');
-                var inputLines = File.ReadAllLines($"{basePath}/input/input{strIndex}.txt");
-                var outputLines = File.ReadAllLines($"{basePath}/output/output{strIndex}.txt");
+                var inputLines = File.ReadAllLines($"Assets/input{strIndex}.txt");
+                var outputLines = File.ReadAllLines($"Assets/output{strIndex}.txt");
 
                 var result = Solution.Instance(repository).ProcessMessages(inputLines);
                 if (outputLines[0] == result)
