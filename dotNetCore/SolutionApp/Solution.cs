@@ -1,4 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Solution.Domain;
+using Solution.Domain.Events;
+using Solution.Domain.Events.Proponent;
+using Solution.Domain.Events.Proposal;
+using Solution.Domain.Events.Warranty;
 
 namespace SolutionApp
 {
@@ -19,7 +26,81 @@ namespace SolutionApp
 
       public static string ProcessMessages(IEnumerable<string> messages)
       {
-         return string.Empty;
+         IDictionary<Guid, Proposal> proposals = new Dictionary<Guid, Proposal>();
+
+         foreach(var message in messages){
+            EventBase ev = Solution.Parse(message);
+            ev.Run();
+            var proposal = ev.Proposal;
+            proposals[proposal.Id] = proposal;
+         }
+
+         var validProposals = proposals
+            .Where(p => p.Value.IsValid())
+            .Select(p => p.Key.ToString());
+
+         return string.Join(',',validProposals);
+      }
+
+      public static EventBase Parse(string message)
+      {
+         var messageData = message.Split(',');
+         switch(messageData[1])
+         {
+            case "proposal":
+               return ProposalEventBuild(messageData);
+            case "proponent":
+               return ProponentEventBuild(messageData);
+            case "warranty":
+               return WarrantyEventBuild(messageData);
+            default:
+               throw new ArgumentException($"Message schema {messageData[1]} not found"); 
+         }
+      }
+
+      private static EventBase WarrantyEventBuild(string[] messageData)
+      {
+         switch(messageData[2])
+         {
+            case "added":
+               return new WarrantyAddedEvent(messageData);
+            case "updated":
+               return new WarrantyUpdatedEvent(messageData);
+            case "removed":
+               return new WarrantyRemovedEvent(messageData);
+            default:
+               throw new ArgumentException($"Message action {messageData[2]} not found for schema {messageData[1]}"); 
+         }
+      }
+
+      private static EventBase ProponentEventBuild(string[] messageData)
+      {
+         switch(messageData[2])
+         {
+            case "added":
+               return new ProponentAddedEvent(messageData);
+            case "updated":
+               return new ProponentUpdatedEvent(messageData);
+            case "removed":
+               return new ProponentRemovedEvent(messageData);
+            default:
+               throw new ArgumentException($"Message action {messageData[2]} not found for schema {messageData[1]}"); 
+         }
+      }
+
+      private static EventBase ProposalEventBuild(string[] messageData)
+      {
+         switch(messageData[2])
+         {
+            case "created":
+               return new ProposalCreatedEvent(messageData);
+            case "updated":
+               return new ProposalUpdatedEvent(messageData);
+            case "deleted":
+               return new ProposalDeletedEvent(messageData);
+            default:
+               throw new ArgumentException($"Message action {messageData[2]} not found for schema {messageData[1]}"); 
+         }
       }
    }
 

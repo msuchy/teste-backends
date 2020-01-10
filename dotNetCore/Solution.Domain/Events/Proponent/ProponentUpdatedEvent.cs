@@ -9,6 +9,14 @@ namespace Solution.Domain.Events.Proponent
       public int Age { get; set; }
       public decimal MonthlyIncome { get; set; }
       public bool IsMain { get; set; }
+      public ProponentUpdatedEvent(string[] messageData) : base(messageData)
+      {
+         ProponentId = Guid.Parse(messageData[5]);
+         Name = messageData[6].Trim();
+         Age = Int32.Parse(messageData[7]);
+         MonthlyIncome = Decimal.Parse(messageData[8]);
+         IsMain = bool.Parse(messageData[9]);
+      }
       
    }
 }
