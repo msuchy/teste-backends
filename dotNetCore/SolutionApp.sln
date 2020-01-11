@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionApp", "SolutionApp\SolutionApp.csproj", "{1155DED9-138C-4CC1-89AD-6BE2322C8F4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionApp", "Solution.App\Solution.App.csproj", "{1155DED9-138C-4CC1-89AD-6BE2322C8F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionUnitTests", "SolutionUnitTests\SolutionUnitTests.csproj", "{AD02343D-555D-47AB-8013-7BD402707CE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionUnitTests", "Solution.UnitTests\Solution.UnitTests.csproj", "{AD02343D-555D-47AB-8013-7BD402707CE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solution.Domain", "Solution.Domain\Solution.Domain.csproj", "{A039D7EE-2ECE-4CA9-98C9-73C80D00F06B}"
 EndProject

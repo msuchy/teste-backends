@@ -8,7 +8,7 @@ Para executar sua solução, rode:
 cd ./dotNetCore # você precisa estar no diretório!
 dotnet restore
 dotnet build
-cd ./SolutionApp
+cd ./Solution.App
 dotnet run
 ```
 

@@ -4,7 +4,7 @@ using Solution.Domain.Events.Proposal;
 using Solution.Domain.Events.Warranty;
 using Xunit;
 
-namespace SolutionUnitTests.Domain
+namespace Solution.UnitTests.Domain
 {
   public class ProposalValidationTest
   {

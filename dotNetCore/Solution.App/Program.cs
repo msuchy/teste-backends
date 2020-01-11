@@ -3,7 +3,7 @@ using System.IO;
 using Solution.Domain;
 using Solution.Repository;
 
-namespace SolutionApp
+namespace Solution.App
 {
     class Program
     {

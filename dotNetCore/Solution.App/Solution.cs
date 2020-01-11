@@ -7,7 +7,7 @@ using Solution.Domain.Events.Proponent;
 using Solution.Domain.Events.Proposal;
 using Solution.Domain.Events.Warranty;
 
-namespace SolutionApp
+namespace Solution.App
 {
   public class Solution
   {

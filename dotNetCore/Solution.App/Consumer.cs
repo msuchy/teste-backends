@@ -6,7 +6,7 @@ using Solution.Domain.Events.Warranty;
 using System;
 using System.Linq;
 
-namespace SolutionApp
+namespace Solution.App
 {
   public class Consumer
   {
